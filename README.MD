@@ -1,0 +1,10 @@
+TriColor-Wars is an Open source game, built on top of https://github.com/slicer4ever/Lightwave
+
+This game was made for https://gamedev.net/ Arcade Battle Arena Challenge! (https://www.gamedev.net/forums/topic/692485-october-2017-gamedev-challenge-arcade-battle-arena/)
+
+This game supports online and local multiplayer with the use of splitting the keyboard and mouse, as it is built for a challenge i am alloting myself 48 hours for total completion.
+The idea is fairly simple, so stay tuned on my development cycle.
+
+The overall game design is a single/multiplayer asteroid type game played on one screen.
+The goal is to switch colors to break the shields of the enemys floating through space, then destroy them when you have no colors equipped, matching the color to the shield.  But be careful in multiplayer you might open up your opponent to stealing your kills if your not careful.
+With that in mind, let's see what we can do in 48 hours!
