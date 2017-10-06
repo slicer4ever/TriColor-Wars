@@ -1,0 +1,19 @@
+<UIScale Width="0" Height="0" Scale="0.75" />
+<UIScale Width="1280" Height="720" Scale="1.0" />
+<UIScale Width="1920" Height="1080" Scale="1.5" />
+<UIScale Width="2560" Height="1440" Scale="2.0" />
+<Material Name="White" Color="#FFFFFFFF" />
+<Material Name="BtnDown" Color="#9999" />
+<Material Name="BtnOff" Color="#00" />
+<Material Name="BtnOver" Color="#4c4c" />
+<Style Name="LargeFnt" Material="White" Font="Font" />
+<Style Name="SmallFnt" Material="White" Font="Font" Scale="0.4" />
+<Style Name="MediumFnt" Material="White" Font="Font" Scale="0.75" />
+<Style Name="RectStyle" Flag="PAMC|LAMC|Invisible|IgnoreOverCounter" Size="x: 100% y: 100%" />
+<Style Name="BtnStyle" DownMaterial="BtnDown" OverMaterial="BtnOver" Material="BtnOff" Flag="PAMC|LAMC" Size="x:100%+10px y: 100%+10px" />
+
+<Component Name="BtnLabel" LabelStyle="LargeFnt">
+	<Label Name="{LabelName}" Style="{LabelStyle}" Value="{Value}" Flag="PAMC|LAMC">
+		<Button Style="BtnStyle" Name="{BtnName}" />
+	</Label>
+</Component>

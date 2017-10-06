@@ -1,0 +1,21 @@
+<AssetManager>
+	<Font Name="Font" Path="App:Fnt.fnt" />
+	<Shader Name="FontShader" Path="Font"/>
+	<Shader Name="UITextureShader" Path="UITexture" />
+	<Shader Name="UIColorShader" Path="UIColor" />
+	<Shader Name="SimpleShader" Path="App:SimpleShader.lws" />
+	<Texture Name="Test" Path="App:Test.png" State="MagNearest|MinNearest" />
+</AssetManager>
+<UIManager>
+	<External Src="App:UIStyle.xml" />
+	<Rect Style="RectStyle" Name="MainMenu">
+		<Label Style="LargeFnt" Flag="PATC|LATC" Value="TriColor Wars" />
+		<BtnLabel Flag="PAMC|LAMC" BtnName="Menu_OnePlayerBtn" Value="One player" Position="y: 100px">
+			<BtnLabel Flag="PABC|LATC" BtnName="Menu_TwoPlayerBtn" Value="Two players" Position="y: -10px">
+				<BtnLabel Flag="PABC|LATC" BtnName="Menu_InstructionsBtn" Value="How to play" Position="y: -10px">
+					<BtnLabel Flag="PABC|LATC" BtnName="Menu_QuitBtn" Value="Quit" Position="y: -10px" />
+				</BtnLabel>
+			</BtnLabel>
+		</BtnLabel>
+	</Rect>
+</UIManager>
