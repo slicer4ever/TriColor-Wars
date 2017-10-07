@@ -26,12 +26,17 @@ State &State_Menu::Deactivated(App *A) {
 
 void State_Menu::SinglePlayBtnPressed(LWEUI *UI, uint32_t EventCode, void *UserData) {
 	App *A = (App*)UserData;
+	Settings &Set = A->GetSettings();
+	Set.m_GameMode = Settings::OnePlayer;
 	A->SetActiveState(State::Game);
 	return;
 }
 
 void State_Menu::DoublePlayBtnPressed(LWEUI *UI, uint32_t EventCode, void *UserData) {
 	App *A = (App*)UserData;
+	Settings &Set = A->GetSettings();
+	Set.m_GameMode = Settings::TwoPlayer;
+	A->SetActiveState(State::Game);
 	return;
 }
 

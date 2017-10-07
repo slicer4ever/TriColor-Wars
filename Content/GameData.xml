@@ -1,21 +1,27 @@
-<AssetManager>
-	<Font Name="Font" Path="App:Fnt.fnt" />
-	<Shader Name="FontShader" Path="Font"/>
-	<Shader Name="UITextureShader" Path="UITexture" />
-	<Shader Name="UIColorShader" Path="UIColor" />
-	<Shader Name="SimpleShader" Path="App:SimpleShader.lws" />
-	<Texture Name="Test" Path="App:Test.png" State="MagNearest|MinNearest" />
-</AssetManager>
-<UIManager>
-	<External Src="App:UIStyle.xml" />
-	<Rect Style="RectStyle" Name="MainMenu">
-		<Label Style="LargeFnt" Flag="PATC|LATC" Value="TriColor Wars" />
-		<BtnLabel Flag="PAMC|LAMC" BtnName="Menu_OnePlayerBtn" Value="One player" Position="y: 100px">
-			<BtnLabel Flag="PABC|LATC" BtnName="Menu_TwoPlayerBtn" Value="Two players" Position="y: -10px">
-				<BtnLabel Flag="PABC|LATC" BtnName="Menu_InstructionsBtn" Value="How to play" Position="y: -10px">
-					<BtnLabel Flag="PABC|LATC" BtnName="Menu_QuitBtn" Value="Quit" Position="y: -10px" />
-				</BtnLabel>
-			</BtnLabel>
-		</BtnLabel>
-	</Rect>
-</UIManager>
+<GameData>
+	<Object Type="RedPlayer" Health="30.0" Power="10.0">
+		<Sprite>PRed_Idle</Sprite>
+		<Sprite>PRed_Move</Sprite>
+	</Object>
+	<Object Type="BluePlayer" Health="30.0" Power="10.0">
+		<Sprite>PBlue_Idle</Sprite>
+		<Sprite>PBlue_Move</Sprite>
+	</Object>
+	<Object Type="Bullet" Health="10.0" Power="10.0">
+		<Sprite>Bullet</Sprite>
+	</Object>
+	<Object Type="AsteroidA" Health="10.0" Power="10.0" Value="5">
+		<Sprite>AsteroidA</Sprite>
+	</Object>
+	<Object Type="AsteroidB" Health="10.0" Power="10.0" Value="5">
+		<Sprite>AsteroidB</Sprite>
+	</Object>
+	<Object Type="AsteroidC" Health="10.0" Power="10.0" Value="5">
+		<Sprite>AsteroidC</Sprite>
+	</Object>
+	<Wave>
+		<AsteroidA Rate="90" Count="2" />
+		<AsteroidB Rate="90" Offset="30" Count="2" />
+		<AsteroidC Rate="90" Offset="45" Count="2" />
+	</Wave>
+</GameData>

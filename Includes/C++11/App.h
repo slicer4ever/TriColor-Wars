@@ -7,6 +7,15 @@
 #include <LWETypes.h>
 #include "Types.h"
 #include "State.h"
+#include "Sprite.h"
+
+struct Settings {
+	enum {
+		OnePlayer = 0,
+		TwoPlayer
+	};
+	uint32_t m_GameMode;
+};
 
 class App {
 public:
@@ -34,15 +43,22 @@ public:
 
 	LWEUIManager *GetUIManager(void);
 
+	SpriteManager *GetSpriteManager(void);
+
 	bool LoadGameData(void);
 
+	bool LoadUIData(void);
+
 	uint32_t GetFlag(void);
+
+	Settings &GetSettings(void);
 
 	App(LWAllocator &Allocator);
 
 	~App();
 
 private:
+	Settings m_Settings;
 	State *m_States[State::Count];
 	LWWindow *m_Window;
 	LWVideoDriver *m_VideoDriver;
@@ -50,6 +66,7 @@ private:
 	Renderer *m_Renderer;
 	LWEUIManager *m_UIManager;
 	LWEAssetManager *m_AssetManager;
+	SpriteManager *m_SpriteManager;
 	LWAllocator &m_Allocator;
 	uint64_t m_LastUpdateTick;
 	uint32_t m_Flag;

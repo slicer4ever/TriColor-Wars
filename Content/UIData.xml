@@ -1,0 +1,34 @@
+<AssetManager>
+	<Font Name="Font" Path="App:Fnt.fnt" />
+	<Shader Name="FontShader" Path="Font"/>
+	<Shader Name="UITextureShader" Path="UITexture" />
+	<Shader Name="UIColorShader" Path="UIColor" />
+	<Shader Name="SimpleShader" Path="App:SimpleShader.lws" />
+	<Texture Name="Atlas" Path="App:Atlas.png" State="MagNearest|MinNearest" />
+</AssetManager>
+<SpriteManager>
+	<Sprite Name="PRed_Idle" TexName="Atlas" Size="54 | 70" />
+	<Sprite Name="PBlue_Idle" TexName="Atlas" Pos="55 | 0" Size="54|70" />
+	<Sprite Name="PRed_Move" TexName="Atlas" Pos="0 | 71" Size="67|70" Anchor="6.5|0" />
+	<Sprite Name="PBlue_Move" TexName="Atlas" Pos="68 | 71" Size="67|70" Anchor="6.5|0" />
+	<Sprite Name="AsteroidA" TexName="Atlas" Pos="111 | 0" Size="55|53" />
+	<Sprite Name="AsteroidB" TexName="Atlas" Pos="167 | 0" Size="45|37" />
+	<Sprite Name="AsteroidC" TexName="Atlas" Pos="167 | 38" Size="58|59" />
+	<Sprite Name="Bullet" TexName="Atlas" Pos="213 | 0" Size="8|4" />
+</SpriteManager>
+<UIManager>
+	<External Src="App:UIStyle.xml" />
+	<Rect Style="RectStyle" Name="MainMenu">
+		<Label Style="LargeFnt" Flag="PATC|LATC" Value="TriColor Wars" />
+		<BtnLabel Flag="PAMC|LAMC" BtnName="Menu_OnePlayerBtn" Value="One player" Position="y: 100px">
+			<BtnLabel Flag="PABC|LATC" BtnName="Menu_TwoPlayerBtn" Value="Two players" Position="y: -10px">
+				<BtnLabel Flag="PABC|LATC" BtnName="Menu_InstructionsBtn" Value="How to play" Position="y: -10px">
+					<BtnLabel Flag="PABC|LATC" BtnName="Menu_QuitBtn" Value="Quit" Position="y: -10px" />
+				</BtnLabel>
+			</BtnLabel>
+		</BtnLabel>
+	</Rect>
+	<Rect Style="RectStyle" Name="GameMenu">
+		<Label Name="ScoreLbl" Style="MediumFnt" Flag="PATC|LATC" Value="" />
+	</Rect>
+</UIManager>

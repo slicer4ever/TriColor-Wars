@@ -5,7 +5,7 @@
 #include <LWCore/LWMatrix.h>
 
 Frame *Renderer::BeginFrame(void) {
-	if (m_WriteFrame - m_ReadFrame >= MaxFrames) return nullptr;
+	if (m_WriteFrame - m_ReadFrame >= MaxFrames-1) return nullptr;
 	uint32_t WFrame = m_WriteFrame%MaxFrames;
 	m_Frames[WFrame].m_UIFrame.m_TextureCount = 0;
 	m_Frames[WFrame].m_UIFrame.m_Mesh->SetActiveVertexCount(0);
@@ -31,14 +31,14 @@ Renderer &Renderer::WriteSprite(Frame *F, Sprite *Sprite, const LWVector2f &Posi
 	uint32_t o = M->WriteVertices(6);
 	LWVector2f Rot = LWVector2f::MakeTheta(Theta);
 	LWVector2f hSize = Sprite->m_Size*0.5f*Scale;
-	LWVector2f TopLeft = LWVector2f(-hSize.x, hSize.y);
-	LWVector2f TopRight = LWVector2f(hSize.x, hSize.y);
-	LWVector2f BtmLeft = LWVector2f(-hSize.x, -hSize.y);
-	LWVector2f BtmRight = LWVector2f(hSize.x, -hSize.y);
-	TopLeft = LWVector2f(TopLeft.x*Rot.x + TopLeft.y*Rot.y, -TopLeft.x*Rot.y + TopLeft.y*Rot.x) + Position;
-	TopRight = LWVector2f(TopRight.x*Rot.x + TopRight.y*Rot.y, -TopRight.x*Rot.y + TopRight.y*Rot.x) + Position;
-	BtmLeft = LWVector2f(BtmLeft.x*Rot.x + BtmLeft.y*Rot.y, -BtmLeft.x*Rot.y + BtmLeft.y*Rot.x) + Position;
-	BtmRight = LWVector2f(BtmRight.x*Rot.x + BtmRight.y*Rot.y, -BtmRight.x*Rot.y + BtmRight.y*Rot.x) + Position;
+	LWVector2f TopLeft = LWVector2f(-hSize.x, hSize.y) - Sprite->m_Anchor;
+	LWVector2f TopRight = LWVector2f(hSize.x, hSize.y) - Sprite->m_Anchor;
+	LWVector2f BtmLeft = LWVector2f(-hSize.x, -hSize.y) - Sprite->m_Anchor;
+	LWVector2f BtmRight = LWVector2f(hSize.x, -hSize.y) - Sprite->m_Anchor;
+	TopLeft = LWVector2f(TopLeft.x*Rot.x - TopLeft.y*Rot.y, TopLeft.x*Rot.y + TopLeft.y*Rot.x) + Position;
+	TopRight = LWVector2f(TopRight.x*Rot.x - TopRight.y*Rot.y, TopRight.x*Rot.y + TopRight.y*Rot.x) + Position;
+	BtmLeft = LWVector2f(BtmLeft.x*Rot.x - BtmLeft.y*Rot.y, BtmLeft.x*Rot.y + BtmLeft.y*Rot.x) + Position;
+	BtmRight = LWVector2f(BtmRight.x*Rot.x - BtmRight.y*Rot.y, BtmRight.x*Rot.y + BtmRight.y*Rot.x) + Position;
 	
 	LWVertexUI *V = M->GetVertexAt(o);
 	*(V + 0) = { LWVector4f(TopLeft.x, TopLeft.y, 0.0f, 1.0f), ColorMult, LWVector4f(Sprite->m_TextureBounds.x, Sprite->m_TextureBounds.y, 0.0f, 0.0f) };

@@ -7,6 +7,8 @@ class Renderer;
 
 class State;
 
+class SpriteManger;
+
 struct Sprite;
 
 struct Frame;
