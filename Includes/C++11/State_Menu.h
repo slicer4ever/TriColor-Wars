@@ -22,11 +22,14 @@ public:
 
 	void InstructionBtnPressed(LWEUI *UI, uint32_t EventCode, void *UserData);
 
+	void InstructBackBtnPressed(LWEUI *UI, uint32_t EventCode, void *UserData);
+
 	void QuitBtnPressed(LWEUI *UI, uint32_t EventCode, void *UserData);
 
 	State_Menu(App *A, LWEUIManager *UIManager);
 private:
 	LWEUI *m_MenuRect;
+	LWEUI *m_InstructRect;
 };
 
 

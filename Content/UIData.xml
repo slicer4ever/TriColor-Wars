@@ -40,6 +40,10 @@
 			</BtnLabel>
 		</BtnLabel>
 	</Rect>
+	<Rect Style="RectStyle" Name="InsMenu">
+		<Label Style="MediumFnt" ValueSrc="App:Instruct.txt" Flag="PAMC|LAMC" />
+		<BtnLabel Flag="PABR|LABR" BtnName="Instruct_BackBtn" Value="Back" />
+	</Rect>
 	<Rect Style="RectStyle" Name="GameMenu">
 		<Label Name="ScoreLbl" Style="MediumFnt" Flag="PATC|LATC" Value="" />
 		<Label Name="WaveLbl" Style="SmallFnt" Flag="PATC|LATC" Position="y: -60px" Value="0" />

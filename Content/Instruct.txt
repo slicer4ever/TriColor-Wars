@@ -1,0 +1,14 @@
+pick up shield colors to destroy the 
+shields around the asteroids and mines.
+You can not destroy an asteroid or 
+mine while you have a shield active.
+
+Mouse controls(PlayerOne):
+LMB - Move toward mouse.
+RMB - Shoot toward mouse.
+Middle Btn - Release shields.
+
+Keyboard controls(PlayerTwo):
+W/A/S/D - Move ship
+Up/Down/Left/Right arrows - shoot in direction
+Q - Release shields.
