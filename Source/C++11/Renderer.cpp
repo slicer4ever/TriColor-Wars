@@ -53,9 +53,9 @@ Renderer &Renderer::WriteSprite(Frame *F, Sprite *Sprite, const LWVector2f &Posi
 
 
 Renderer &Renderer::UpdateSize(LWWindow *Window) {
-	LWVector2i WndSize = Window->GetSize();
-	LWVector2f WndSizef = LWVector2f((float)WndSize.x, (float)WndSize.y);
-	LWMatrix4f Ortho = LWMatrix4f::Ortho(0.0f, WndSizef.x, 0.0f, WndSizef.y, 0.0f, 1.0f);
+	LWVector2f WndSize = Window->GetSizef();
+	LWMatrix4f Ortho = LWMatrix4f::Ortho(0.0f, WndSize.x, 0.0f, WndSize.y, 0.0f, 1.0f);
+	//std::cout << "Window size: " << WndSize.x << " " << WndSize.y << std::endl;
 	memcpy(m_UIUniform->GetLocalBuffer(), &Ortho, sizeof(LWMatrix4f));
 	m_UIUniform->SetEditLength(sizeof(LWMatrix4f)).MarkUpdated();
 	m_Driver->ViewPort();
@@ -118,10 +118,10 @@ Renderer::Renderer(LWWindow *Window, LWVideoDriver *Driver, LWAllocator &Allocat
 	m_DefaultState = m_Driver->CreateVideoState( LWVideoState::CULL_CW | LWVideoState::BLENDING, LWVideoState::BLEND_SRC_ALPHA, LWVideoState::BLEND_ONE_MINUS_SRC_ALPHA, 0, Allocator);
 	m_UIUniform = m_Driver->CreateVideoBuffer(LWVideoBuffer::Uniform, sizeof(LWMatrix4f), Allocator, LWVideoBuffer::LocalCopy | LWVideoBuffer::WriteDiscardable, nullptr);
 
-	m_FontShader = AssetMan->GetAsset("FontShader")->AsShader();
-	m_UITexShader = AssetMan->GetAsset("UITextureShader")->AsShader();
-	m_UIColorShader = AssetMan->GetAsset("UIColorShader")->AsShader();
-	m_SimpleShader = AssetMan->GetAsset("SimpleShader")->AsShader();
+	m_FontShader = AssetMan->GetAsset<LWShader>("FontShader");
+	m_UITexShader = AssetMan->GetAsset<LWShader>("UITextureShader");
+	m_UIColorShader = AssetMan->GetAsset<LWShader>("UIColorShader");
+	m_SimpleShader = AssetMan->GetAsset<LWShader>("SimpleShader");
 
 	m_FontShader->SetUniformBlock(LWSHADER_BLOCKUNIFORM, m_UIUniform);
 	m_UITexShader->SetUniformBlock(LWSHADER_BLOCKUNIFORM, m_UIUniform);

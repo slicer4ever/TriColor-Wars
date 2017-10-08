@@ -24,12 +24,11 @@ bool SpriteManager::XMLParser(LWEXMLNode *Node, void *UserData, LWEXML *X) {
 		LWXMLAttribute *SizeAttr = C->FindAttribute("Size");
 		LWXMLAttribute *AnchorAttr = C->FindAttribute("Anchor");
 		if (!NameAttr || !TexNameAttr) continue;
-		LWEAsset *TexAsset = AMan->GetAsset(TexNameAttr->m_Value);
-		if (!TexAsset || TexAsset->GetType()!=LWEAsset::Texture) {
+		LWTexture *Tex = AMan->GetAsset<LWTexture>(TexNameAttr->m_Value);
+		if(!Tex){
 			std::cout << "Could not find texture: " << TexNameAttr->m_Value << std::endl;
 			continue;
 		}
-		LWTexture *Tex = TexAsset->AsTexture();
 		LWVector2i Pos = LWVector2i(0);
 		LWVector2f Anchor = LWVector2f(0.0f);
 		LWVector2i Size = Tex->Get2DSize();

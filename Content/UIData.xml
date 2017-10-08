@@ -5,6 +5,9 @@
 	<Shader Name="UIColorShader" Path="UIColor" />
 	<Shader Name="SimpleShader" Path="App:SimpleShader.lws" />
 	<Texture Name="Atlas" Path="App:Atlas.png" State="MagNearest|MinNearest" />
+	<AudioStream Name="BackgroundAudio" Path="App:Background.ogg" Flag="Decompressed" />
+	<AudioStream Name="Fire" Path="App:Fire.ogg" />
+	<AudioStream Name="Pop" Path="App:Pop.ogg" />
 </AssetManager>
 <SpriteManager>
 	<Sprite Name="PRed_Idle" TexName="Atlas" Size="54 | 70" />
@@ -15,6 +18,15 @@
 	<Sprite Name="AsteroidB" TexName="Atlas" Pos="167 | 0" Size="45|37" />
 	<Sprite Name="AsteroidC" TexName="Atlas" Pos="167 | 38" Size="58|59" />
 	<Sprite Name="Bullet" TexName="Atlas" Pos="213 | 0" Size="8|4" />
+	<Sprite Name="ShieldBase" TexName="Atlas" Pos="0 | 142" Size="104 | 104" />
+	<Sprite Name="ShieldGreenBlue" TexName="Atlas" Pos="303|105" Size="104|104" />
+	<Sprite Name="ShieldGreenRed" TexName="Atlas" Pos="303|0" Size="104|104" />
+	<Sprite Name="ShieldBlueRed" TexName="Atlas" Pos="408|105" Size="104|104" />
+	<Sprite Name="ShieldAll" TexName="Atlas" Pos="408|0" Size="104|104" />
+	<Sprite Name="ShieldFountain" TexName="Atlas" Pos="105 | 142" Size="99 | 99" />
+	<Sprite Name="Mine" TexName="Atlas" Pos="136 | 98" Size="44|35" />
+	<Sprite Name="EnemyA" TexName="Atlas" Pos="181|98" Size="44|37" />
+	<Sprite Name="Star" TexName="Atlas" Pos="222|0" Size="5|5" />
 </SpriteManager>
 <UIManager>
 	<External Src="App:UIStyle.xml" />
@@ -30,5 +42,11 @@
 	</Rect>
 	<Rect Style="RectStyle" Name="GameMenu">
 		<Label Name="ScoreLbl" Style="MediumFnt" Flag="PATC|LATC" Value="" />
+		<Label Name="WaveLbl" Style="SmallFnt" Flag="PATC|LATC" Position="y: -60px" Value="0" />
+	</Rect>
+	<Rect Style="RectStyle" Name="PauseMenu">
+		<BtnLabel Flag="PAMC|LAMC" BtnName="Pause_RestartBtn" Value="Restart" Position = "y: 100px">
+			<BtnLabel Flag="PABC|LATC" BtnName="Pause_MenuBtn" Value="Menu" Position="y:-10px" />
+		</BtnLabel>
 	</Rect>
 </UIManager>

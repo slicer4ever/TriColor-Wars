@@ -17,6 +17,18 @@ struct Settings {
 	uint32_t m_GameMode;
 };
 
+struct AudioQueue {
+	enum {
+		MaxQueueSize = 32
+	};
+	LWAudioStream *m_Stream[MaxQueueSize];
+	float m_StreamVolume[MaxQueueSize];
+	uint32_t m_LoopCount[MaxQueueSize];
+
+	uint32_t m_ReadPos;
+	uint32_t m_WritePos;
+};
+
 class App {
 public:
 	enum {
@@ -39,11 +51,15 @@ public:
 
 	App &SetActiveState(uint32_t State);
 
+	App &DispatchAudio(const char *Name, float Volume, uint32_t LoopCnt=0);
+
 	LWEAssetManager *GetAssetManager(void);
 
 	LWEUIManager *GetUIManager(void);
 
 	SpriteManager *GetSpriteManager(void);
+
+	LWWindow *GetWindow(void);
 
 	bool LoadGameData(void);
 
@@ -59,6 +75,7 @@ public:
 
 private:
 	Settings m_Settings;
+	AudioQueue m_AudioQueue;
 	State *m_States[State::Count];
 	LWWindow *m_Window;
 	LWVideoDriver *m_VideoDriver;
@@ -68,6 +85,8 @@ private:
 	LWEAssetManager *m_AssetManager;
 	SpriteManager *m_SpriteManager;
 	LWAllocator &m_Allocator;
+	LWVector2i m_PrevPosition;
+	LWVector2i m_PrevSize;
 	uint64_t m_LastUpdateTick;
 	uint32_t m_Flag;
 	uint32_t m_ActiveState;

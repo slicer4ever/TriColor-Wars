@@ -19,6 +19,16 @@ void App::NetworkThread(uint64_t lCurrentTime) {
 }
 
 void App::AudioThread(uint64_t lCurrentTime) {
+	while (m_AudioQueue.m_ReadPos != m_AudioQueue.m_WritePos) {
+		uint32_t i = m_AudioQueue.m_ReadPos%AudioQueue::MaxQueueSize;
+		m_AudioDriver->CreateSound(m_AudioQueue.m_Stream[i], LWSound::RequestPlay, nullptr, m_AudioQueue.m_LoopCount[i], m_AudioQueue.m_StreamVolume[i]);
+		m_AudioQueue.m_ReadPos++;
+	}
+
+	if (!m_AudioDriver->Update(lCurrentTime, m_Window)) {
+		std::cout << "Audio driver failed." << std::endl;
+		m_Flag |= Terminate;
+	}
 	return;
 }
 
@@ -26,7 +36,22 @@ void App::InputThread(uint64_t lCurrentTime) {
 	m_Window->Update(lCurrentTime);
 	LWKeyboard *Keyboard = m_Window->GetKeyboardDevice();
 	if (m_Window->GetFlag()&LWWindow::Terminate) m_Flag |= Terminate;
-	if (Keyboard->ButtonPressed(LWKey::Esc)) m_Flag |= Terminate;
+	if (Keyboard->ButtonPressed(LWKey::F11)) {
+		bool isFullscreen = (m_Window->GetFlag()&LWWindow::Borderless) != 0;
+		m_Window->SetBorderless(!isFullscreen);
+		
+		LWVideoMode ActiveMode = LWVideoMode::GetActiveMode();
+		if (isFullscreen) {
+			m_Window->SetPosition(m_PrevPosition);
+			m_Window->SetSize(m_PrevSize);
+		} else {
+			m_PrevPosition = m_Window->GetPosition();
+			m_PrevSize = m_Window->GetSize();
+			m_Window->SetPosition(LWVector2i(0));
+			m_Window->SetSize(ActiveMode.GetSize());
+		}
+	}
+
 	m_UIManager->Update(lCurrentTime);
 	m_States[m_ActiveState]->ProcessInput(this, m_Window);
 	return;
@@ -67,6 +92,10 @@ LWEUIManager *App::GetUIManager(void) {
 
 SpriteManager *App::GetSpriteManager(void) {
 	return m_SpriteManager;
+}
+
+LWWindow *App::GetWindow(void) {
+	return m_Window;
 }
 
 Settings &App::GetSettings(void) {
@@ -128,6 +157,19 @@ App &App::SetActiveState(uint32_t State) {
 	return *this;
 }
 
+App &App::DispatchAudio(const char *Name, float Volume, uint32_t LoopCnt) {
+	if (m_AudioQueue.m_WritePos - m_AudioQueue.m_ReadPos >= AudioQueue::MaxQueueSize) return *this;
+	LWAudioStream *Stream = m_AssetManager->GetAsset<LWAudioStream>(Name);
+	if (!Stream) return *this;
+	uint32_t i = m_AudioQueue.m_WritePos%AudioQueue::MaxQueueSize;
+	m_AudioQueue.m_Stream[i] = Stream;
+	m_AudioQueue.m_StreamVolume[i] = Volume;
+	m_AudioQueue.m_LoopCount[i] = LoopCnt;
+
+	m_AudioQueue.m_WritePos++;
+	return *this;
+}
+
 uint32_t App::GetFlag(void) {
 	return m_Flag;
 }
@@ -138,6 +180,7 @@ App::App(LWAllocator &Allocator) : m_Flag(0), m_Allocator(Allocator), m_VideoDri
 	char PlatformNames[][32] = LWPLATFORM_NAMES;
 	LWVideoMode CurrentMode = LWVideoMode::GetActiveMode();
 	memset(m_States, 0, sizeof(m_States));
+	m_AudioQueue.m_ReadPos = m_AudioQueue.m_WritePos = 0;
 
 	LWVector2i WndSize = LWVector2i(1280, 720);
 	LWVector2i WndPos = CurrentMode.GetSize() / 2 - WndSize / 2;
@@ -169,16 +212,17 @@ App::App(LWAllocator &Allocator) : m_Flag(0), m_Allocator(Allocator), m_VideoDri
 		m_Flag |= Terminate;
 		return;
 	}
+	DispatchAudio("BackgroundAudio", 0.25f, 0xFFFFFF);
 }
 
 App::~App() {
 	LWAllocator::Destroy((State_Menu*)m_States[State::Menu]);
 	LWAllocator::Destroy((State_Game*)m_States[State::Game]);
+	LWAllocator::Destroy(m_AudioDriver);
 	LWAllocator::Destroy(m_SpriteManager);
 	LWAllocator::Destroy(m_UIManager);
 	LWAllocator::Destroy(m_AssetManager);
 	LWAllocator::Destroy(m_Renderer);
 	LWVideoDriver::DestroyVideoDriver(m_VideoDriver);
-	LWAllocator::Destroy(m_AudioDriver);
 	LWAllocator::Destroy(m_Window);
 }

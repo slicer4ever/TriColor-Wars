@@ -10,6 +10,9 @@
 	<Object Type="Bullet" Health="10.0" Power="10.0">
 		<Sprite>Bullet</Sprite>
 	</Object>
+	<Object Type="ShieldFountain" Health="10.0" Power="10.0">
+		<Sprite>ShieldFountain</Sprite>
+	</Object>
 	<Object Type="AsteroidA" Health="10.0" Power="10.0" Value="5">
 		<Sprite>AsteroidA</Sprite>
 	</Object>
@@ -19,9 +22,40 @@
 	<Object Type="AsteroidC" Health="10.0" Power="10.0" Value="5">
 		<Sprite>AsteroidC</Sprite>
 	</Object>
+	<Object Type="Mine" Health="20.0" Power="10.0" Value="10">
+		<Sprite>Mine</Sprite>
+	</Object>
 	<Wave>
-		<AsteroidA Rate="90" Count="2" />
+		<AsteroidA Rate="90" Count="1" />
 		<AsteroidB Rate="90" Offset="30" Count="2" />
 		<AsteroidC Rate="90" Offset="45" Count="2" />
+	</Wave>
+	<Wave>
+		<AsteroidA Rate="90" Count="1" Shield="Blue" />
+		<AsteroidB Rate="90" Count="2" Offset="30" Shield="Red" />
+		<AsteroidC Rate="90" Count="2" Offset="45" Shield="Green" />
+		<AsteroidA Count="1" Offset="30" />
+		<AsteroidB Count="1" Offset="45" />
+	</Wave>
+	<Wave>
+		<Mine Count="1" Offset="45" Shield="RedGreen" />
+		<AsteroidA Rate="90" Count="2" Shield="Blue" />
+		<AsteroidB Rate="90" Count="5" />
+		<AsteroidC Rate="90" Offset="30" Count="2" Shield="Green" />
+	</Wave>
+	<Wave>
+		<Mine Count="2" Offset="45" Rate="120" Shield="RedGreen" />
+		<AsteroidA Offset="90" Count="1" Shield="Blue" />
+		<AsteroidA Offset="45" Count="1" Shield="Green" />
+		<AsteroidA Offset="120" Count="1" Shield="Red" />
+		<AsteroidB Rate="90" Count="6" />
+	</Wave>
+	<Wave>
+		<Mine Count="1" Offset="90" Shield="All" />
+		<Mine Count="2" Rate="60" Offset="45" Shield="RedGreen" />
+		<Mine Count="2" Rate="60" Offset="30" Shield="BlueRed" />
+		<AsteroidA Offset="90" Rate="60" Count="2" Shield="Green" />
+		<AsteroidA Offset="60" Rate="90" Count="3" Shield="Blue" />
+		<AsteroidB Rate="90" Count="10" />
 	</Wave>
 </GameData>

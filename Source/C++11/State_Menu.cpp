@@ -1,5 +1,7 @@
 #include "State_Menu.h"
 #include <LWEUIManager.h>
+#include <LWPlatform/LWWindow.h>
+#include <LWPlatform/LWInputDevice.h>
 #include "App.h"
 
 State &State_Menu::Update(bool Tick, App *A, uint64_t lCurrentTime) {
@@ -11,6 +13,11 @@ State &State_Menu::DrawFrame(App *A, Frame *F, Renderer *R) {
 }
 
 State &State_Menu::ProcessInput(App *A, LWWindow *Window) {
+	LWKeyboard *Keyboard = Window->GetKeyboardDevice();
+
+	if (Keyboard) {
+		if (Keyboard->ButtonDown(LWKey::Esc)) A->SetTerminate();
+	}
 	return *this; 
 }
 
