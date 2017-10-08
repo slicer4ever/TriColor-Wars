@@ -14,10 +14,6 @@
 #include "State_Menu.h"
 #include "State_Game.h"
 
-void App::NetworkThread(uint64_t lCurrentTime) {
-	return;
-}
-
 void App::AudioThread(uint64_t lCurrentTime) {
 	while (m_AudioQueue.m_ReadPos != m_AudioQueue.m_WritePos) {
 		uint32_t i = m_AudioQueue.m_ReadPos%AudioQueue::MaxQueueSize;

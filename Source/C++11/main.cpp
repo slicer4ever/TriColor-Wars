@@ -3,12 +3,6 @@
 #include "App.h"
 #include <thread>
 #include <chrono>
-void NetworkThread(App *A) {
-	while (!(A->GetFlag()&App::Terminate)) {
-		A->NetworkThread(LWTimer::GetCurrent());
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	}
-}
 
 void AudioThread(App *A) {
 	while (!(A->GetFlag()&App::Terminate)) {
@@ -29,7 +23,6 @@ int LWMain(int argc, char **argv) {
 	App *A = Allocator.Allocate<App>(Allocator);
 	std::thread UThread(UpdateThread, A);
 	std::thread AThread(AudioThread, A);
-	std::thread NThread(NetworkThread, A);
 	while (!(A->GetFlag()&App::Terminate)) {
 		uint64_t Current = LWTimer::GetCurrent();
 		A->InputThread(Current);
@@ -38,7 +31,6 @@ int LWMain(int argc, char **argv) {
 	}
 	UThread.join();
 	AThread.join();
-	NThread.join();
 
 	LWAllocator::Destroy(A);
 	return 0;

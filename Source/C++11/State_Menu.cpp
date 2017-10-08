@@ -14,7 +14,6 @@ State &State_Menu::DrawFrame(App *A, Frame *F, Renderer *R) {
 
 State &State_Menu::ProcessInput(App *A, LWWindow *Window) {
 	LWKeyboard *Keyboard = Window->GetKeyboardDevice();
-
 	if (Keyboard) {
 		if (Keyboard->ButtonPressed(LWKey::Esc)) {
 			if (m_InstructRect->GetVisible()) InstructBackBtnPressed(nullptr, 0, A);

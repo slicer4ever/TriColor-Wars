@@ -37,8 +37,6 @@ public:
 		UpdateRate = 60
 	};
 
-	void NetworkThread(uint64_t lCurrentTime);
-
 	void AudioThread(uint64_t lCurrentTime);
 
 	void InputThread(uint64_t lCurrentTime);
