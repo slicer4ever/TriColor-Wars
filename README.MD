@@ -11,3 +11,5 @@ With that in mind, let's see what we can do in 48 hours!
 ---
 The 48 hours is up, and this is what i reached.  Overall I'm happy with my progress, it's not quite as much as i wanted, but it both meets the requirements of this challenge, and mechanically the idea's i wanted to play out.  overall i find it decently fun, I think if i dedicated more time to ai variety and wave tuning it could be more fun.  Ultimately i'm happy with what i was able to do in my self imposed limits.  I hope my work can be a learning experiance for others some day.
 
+Video of gameplay:
+https://youtu.be/wIfAZA_Fro8
