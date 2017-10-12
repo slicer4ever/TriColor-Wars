@@ -16,7 +16,7 @@ LWEngine = $(LightWave)Engine/Binarys/$(Config)/$(PlatformTarget)/
 Dependency = $(LightWave)/Dependency/Binarys/$(Config)/$(PlatformTarget)/
 
 TargetName = Neosnake
-Libs = -lLWEngine -lLWNetwork -lLWCore -lLWPlatform -lLWVideo -lLWAudio -lvorbis -logg -lGLEW -lpng -lz -lX11 -lXrandr -lGL -lpulse -lFreetype -lresolv
+Libs = -lLWEngine -lLWNetwork -lLWCore -lLWPlatform -lLWVideo -lLWAudio -lvorbis -logg -lGLEW -lpng -lz -lX11 -lXrandr -lGL -lpulse -lfreetype -lresolv
 LibPath = -L$(LWFramework) -L$(Dependency) -L$(LWEngine)
 Obj = $(Config)/$(PlatformTarget)/
 Src = $(BaseDir)Source/
