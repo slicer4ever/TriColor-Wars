@@ -34,7 +34,7 @@ void App::InputThread(uint64_t lCurrentTime) {
 	if (m_Window->GetFlag()&LWWindow::Terminate) m_Flag |= Terminate;
 	if (Keyboard->ButtonPressed(LWKey::F11)) {
 		bool isFullscreen = (m_Window->GetFlag()&LWWindow::Borderless) != 0;
-		m_Window->SetBorderless(!isFullscreen);
+		m_Window->SetBorderless(!isFullscreen, true);
 		
 		LWVideoMode ActiveMode = LWVideoMode::GetActiveMode();
 		if (isFullscreen) {
