@@ -208,7 +208,7 @@ App::App(LWAllocator &Allocator) : m_Flag(0), m_Allocator(Allocator), m_VideoDri
 		m_Flag |= Terminate;
 		return;
 	}
-	DispatchAudio("BackgroundAudio", 0.25f, 0xFFFFFF);
+	//DispatchAudio("BackgroundAudio", 0.25f, 0xFFFFFF);
 }
 
 App::~App() {
