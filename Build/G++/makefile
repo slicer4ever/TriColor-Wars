@@ -15,8 +15,8 @@ LWFramework = $(LightWave)Framework/Binarys/$(Config)/$(PlatformTarget)/
 LWEngine = $(LightWave)Engine/Binarys/$(Config)/$(PlatformTarget)/
 Dependency = $(LightWave)/Dependency/Binarys/$(Config)/$(PlatformTarget)/
 
-TargetName = Neosnake
-Libs = -lLWEngine -lLWNetwork -lLWPlatform -lLWVideo -lvorbis -logg -lGLEW -lpng -lz -lX11 -lXrandr -lGL -lpulse -lfreetype -lresolv -lLWAudio  -lLWCore 
+TargetName = TriColor-Wars
+Libs = -lLWEngine -lLWNetwork -lLWPlatform -lLWVideo -lLWAudio -lLWCore -lvorbis -lvorbisfile -logg -lGLEW -lpng -lz -lX11 -lXrandr -lGL -lpulse -lfreetype -lresolv
 LibPath = -L$(LWFramework) -L$(Dependency) -L$(LWEngine)
 Obj = $(Config)/$(PlatformTarget)/
 Src = $(BaseDir)Source/
