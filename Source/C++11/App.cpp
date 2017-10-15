@@ -180,7 +180,7 @@ App::App(LWAllocator &Allocator) : m_Flag(0), m_Allocator(Allocator), m_VideoDri
 
 	LWVector2i WndSize = LWVector2i(1280, 720);
 	LWVector2i WndPos = CurrentMode.GetSize() / 2 - WndSize / 2;
-	m_Window = Allocator.Allocate<LWWindow>("Tri-Color Wars", "TriColor", Allocator, LWWindow::WindowedMode | LWWindow::MouseDevice | LWWindow::KeyboardDevice, WndPos, WndSize);
+    m_Window = Allocator.Allocate<LWWindow>("Tri-Color Wars", "TriColor", Allocator, LWWindow::WindowedMode | LWWindow::MouseDevice | LWWindow::KeyboardDevice | LWWindow::TouchDevice, WndPos, WndSize);
 	m_VideoDriver = LWVideoDriver::MakeVideoDriver(m_Window, LWVideoDriver::Unspecefied);
 	if (!m_VideoDriver) {
 		std::cout << "Error creating video driver." << std::endl;
@@ -208,7 +208,7 @@ App::App(LWAllocator &Allocator) : m_Flag(0), m_Allocator(Allocator), m_VideoDri
 		m_Flag |= Terminate;
 		return;
 	}
-	//DispatchAudio("BackgroundAudio", 0.25f, 0xFFFFFF);
+	DispatchAudio("BackgroundAudio", 0.25f, 0xFFFFFF);
 }
 
 App::~App() {

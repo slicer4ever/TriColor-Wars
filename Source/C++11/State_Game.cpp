@@ -546,7 +546,7 @@ State &State_Game::Activated(App *A) {
 		m_PlayerTwo.m_Object->m_Owner = &m_PlayerTwo;
 	}
 	m_PlayerOne.m_TargetDir = m_PlayerTwo.m_TargetDir = 100.0f;
-	m_PlayerOne.m_ShootDir = m_PlayerTwo.m_ShootDir = false;
+	m_PlayerOne.m_ShootDir = m_PlayerTwo.m_ShootDir = 100.0f;
 	m_PlayerOne.m_FireTick = m_PlayerTwo.m_FireTick = 0;
 	m_PlayerOne.m_Score = m_PlayerTwo.m_Score = 0;
 	m_PlayerOne.m_Lives = m_PlayerTwo.m_Lives = DefaultLives;
