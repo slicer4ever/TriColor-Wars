@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		222672EA1F9404B4008ACE82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222672E91F9404B4008ACE82 /* Images.xcassets */; };
+		222672EC1F9404DF008ACE82 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672EB1F9404DF008ACE82 /* CoreAudio.framework */; };
+		222672EE1F9404E6008ACE82 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672ED1F9404E6008ACE82 /* AudioToolbox.framework */; };
+		222672F01F9404EC008ACE82 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672EF1F9404EC008ACE82 /* GLKit.framework */; };
+		222672F21F9404F1008ACE82 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672F11F9404F1008ACE82 /* OpenGLES.framework */; };
+		222672F41F9404F6008ACE82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672F31F9404F6008ACE82 /* CoreGraphics.framework */; };
+		222672F61F9404FF008ACE82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672F51F9404FF008ACE82 /* QuartzCore.framework */; };
+		222672F81F940506008ACE82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672F71F940506008ACE82 /* UIKit.framework */; };
+		222672FA1F94050B008ACE82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222672F91F94050B008ACE82 /* Foundation.framework */; };
+		222673081F94076F008ACE82 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673021F94076F008ACE82 /* App.cpp */; };
+		222673091F94076F008ACE82 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673031F94076F008ACE82 /* main.cpp */; };
+		2226730A1F94076F008ACE82 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673041F94076F008ACE82 /* Renderer.cpp */; };
+		2226730B1F94076F008ACE82 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673051F94076F008ACE82 /* Sprite.cpp */; };
+		2226730C1F94076F008ACE82 /* State_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673061F94076F008ACE82 /* State_Game.cpp */; };
+		2226730D1F94076F008ACE82 /* State_Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673071F94076F008ACE82 /* State_Menu.cpp */; };
+		222673261F940791008ACE82 /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 222673251F940791008ACE82 /* Content */; };
+		222673271F9407DB008ACE82 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673021F94076F008ACE82 /* App.cpp */; };
+		222673281F9407DB008ACE82 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673031F94076F008ACE82 /* main.cpp */; };
+		222673291F9407DB008ACE82 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673041F94076F008ACE82 /* Renderer.cpp */; };
+		2226732A1F9407DB008ACE82 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673051F94076F008ACE82 /* Sprite.cpp */; };
+		2226732B1F9407DB008ACE82 /* State_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673061F94076F008ACE82 /* State_Game.cpp */; };
+		2226732C1F9407DB008ACE82 /* State_Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222673071F94076F008ACE82 /* State_Menu.cpp */; };
+		2226732D1F9407FB008ACE82 /* Content in Resources */ = {isa = PBXBuildFile; fileRef = 222673251F940791008ACE82 /* Content */; };
+		224430751F92A35000013802 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224430731F92A35000013802 /* AudioToolbox.framework */; };
+		224430761F92A35000013802 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224430741F92A35000013802 /* CoreAudio.framework */; };
+		224430781F92A35900013802 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224430771F92A35900013802 /* Cocoa.framework */; };
+		2244307A1F92A36100013802 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224430791F92A36100013802 /* OpenGL.framework */; };
+		2244307E1F92A39300013802 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2244307D1F92A39300013802 /* Info.plist */; };
+		226E3B631F9402E0000E19BB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226E3B621F9402E0000E19BB /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		222672E91F9404B4008ACE82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		222672EB1F9404DF008ACE82 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		222672ED1F9404E6008ACE82 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		222672EF1F9404EC008ACE82 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		222672F11F9404F1008ACE82 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		222672F31F9404F6008ACE82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		222672F51F9404FF008ACE82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		222672F71F940506008ACE82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		222672F91F94050B008ACE82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		222673021F94076F008ACE82 /* App.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = App.cpp; path = "../../Source/C++11/App.cpp"; sourceTree = "<group>"; };
+		222673031F94076F008ACE82 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = main.cpp; path = "../../Source/C++11/main.cpp"; sourceTree = "<group>"; };
+		222673041F94076F008ACE82 /* Renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Renderer.cpp; path = "../../Source/C++11/Renderer.cpp"; sourceTree = "<group>"; };
+		222673051F94076F008ACE82 /* Sprite.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Sprite.cpp; path = "../../Source/C++11/Sprite.cpp"; sourceTree = "<group>"; };
+		222673061F94076F008ACE82 /* State_Game.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = State_Game.cpp; path = "../../Source/C++11/State_Game.cpp"; sourceTree = "<group>"; };
+		222673071F94076F008ACE82 /* State_Menu.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = State_Menu.cpp; path = "../../Source/C++11/State_Menu.cpp"; sourceTree = "<group>"; };
+		222673251F940791008ACE82 /* Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Content; path = ../../Content; sourceTree = "<group>"; };
+		224430521F929FC200013802 /* TriColor-Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TriColor-Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		224430731F92A35000013802 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		224430741F92A35000013802 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		224430771F92A35900013802 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		224430791F92A36100013802 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2244307D1F92A39300013802 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226E3B471F940127000E19BB /* TriColor-Warsi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TriColor-Warsi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E3B5E1F940127000E19BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226E3B621F9402E0000E19BB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2244304F1F929FC200013802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2244307A1F92A36100013802 /* OpenGL.framework in Frameworks */,
+				224430781F92A35900013802 /* Cocoa.framework in Frameworks */,
+				224430751F92A35000013802 /* AudioToolbox.framework in Frameworks */,
+				224430761F92A35000013802 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E3B441F940127000E19BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222672FA1F94050B008ACE82 /* Foundation.framework in Frameworks */,
+				222672F81F940506008ACE82 /* UIKit.framework in Frameworks */,
+				222672F61F9404FF008ACE82 /* QuartzCore.framework in Frameworks */,
+				222672F41F9404F6008ACE82 /* CoreGraphics.framework in Frameworks */,
+				222672F21F9404F1008ACE82 /* OpenGLES.framework in Frameworks */,
+				222672F01F9404EC008ACE82 /* GLKit.framework in Frameworks */,
+				222672EE1F9404E6008ACE82 /* AudioToolbox.framework in Frameworks */,
+				222672EC1F9404DF008ACE82 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		222672FB1F94053A008ACE82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				224430791F92A36100013802 /* OpenGL.framework */,
+				224430771F92A35900013802 /* Cocoa.framework */,
+				224430731F92A35000013802 /* AudioToolbox.framework */,
+				224430741F92A35000013802 /* CoreAudio.framework */,
+				222672F91F94050B008ACE82 /* Foundation.framework */,
+				222672F71F940506008ACE82 /* UIKit.framework */,
+				222672F51F9404FF008ACE82 /* QuartzCore.framework */,
+				222672F31F9404F6008ACE82 /* CoreGraphics.framework */,
+				222672F11F9404F1008ACE82 /* OpenGLES.framework */,
+				222672EF1F9404EC008ACE82 /* GLKit.framework */,
+				222672ED1F9404E6008ACE82 /* AudioToolbox.framework */,
+				222672EB1F9404DF008ACE82 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		224430491F929FC200013802 = {
+			isa = PBXGroup;
+			children = (
+				222673251F940791008ACE82 /* Content */,
+				222672FB1F94053A008ACE82 /* Frameworks */,
+				224430661F929FF500013802 /* Source */,
+				224430541F929FC200013802 /* TriColor-Wars */,
+				226E3B481F940127000E19BB /* TriColor-Warsi */,
+				224430531F929FC200013802 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		224430531F929FC200013802 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				224430521F929FC200013802 /* TriColor-Wars.app */,
+				226E3B471F940127000E19BB /* TriColor-Warsi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		224430541F929FC200013802 /* TriColor-Wars */ = {
+			isa = PBXGroup;
+			children = (
+				2244307D1F92A39300013802 /* Info.plist */,
+			);
+			path = "TriColor-Wars";
+			sourceTree = "<group>";
+		};
+		224430661F929FF500013802 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				222673021F94076F008ACE82 /* App.cpp */,
+				222673031F94076F008ACE82 /* main.cpp */,
+				222673041F94076F008ACE82 /* Renderer.cpp */,
+				222673051F94076F008ACE82 /* Sprite.cpp */,
+				222673061F94076F008ACE82 /* State_Game.cpp */,
+				222673071F94076F008ACE82 /* State_Menu.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		226E3B481F940127000E19BB /* TriColor-Warsi */ = {
+			isa = PBXGroup;
+			children = (
+				226E3B5E1F940127000E19BB /* Info.plist */,
+				226E3B621F9402E0000E19BB /* Launch Screen.storyboard */,
+				222672E91F9404B4008ACE82 /* Images.xcassets */,
+			);
+			path = "TriColor-Warsi";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		224430511F929FC200013802 /* TriColor-Wars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 224430631F929FC200013802 /* Build configuration list for PBXNativeTarget "TriColor-Wars" */;
+			buildPhases = (
+				2244304E1F929FC200013802 /* Sources */,
+				2244304F1F929FC200013802 /* Frameworks */,
+				224430501F929FC200013802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TriColor-Wars";
+			productName = "TriColor-Wars";
+			productReference = 224430521F929FC200013802 /* TriColor-Wars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		226E3B461F940127000E19BB /* TriColor-Warsi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226E3B611F940127000E19BB /* Build configuration list for PBXNativeTarget "TriColor-Warsi" */;
+			buildPhases = (
+				226E3B431F940127000E19BB /* Sources */,
+				226E3B441F940127000E19BB /* Frameworks */,
+				226E3B451F940127000E19BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TriColor-Warsi";
+			productName = "TriColor-Warsi";
+			productReference = 226E3B471F940127000E19BB /* TriColor-Warsi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2244304A1F929FC200013802 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = tim;
+				TargetAttributes = {
+					224430511F929FC200013802 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					226E3B461F940127000E19BB = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D8X97PG33A;
+					};
+				};
+			};
+			buildConfigurationList = 2244304D1F929FC200013802 /* Build configuration list for PBXProject "TriColor-Wars" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 224430491F929FC200013802;
+			productRefGroup = 224430531F929FC200013802 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				224430511F929FC200013802 /* TriColor-Wars */,
+				226E3B461F940127000E19BB /* TriColor-Warsi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		224430501F929FC200013802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222673261F940791008ACE82 /* Content in Resources */,
+				2244307E1F92A39300013802 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E3B451F940127000E19BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2226732D1F9407FB008ACE82 /* Content in Resources */,
+				222672EA1F9404B4008ACE82 /* Images.xcassets in Resources */,
+				226E3B631F9402E0000E19BB /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2244304E1F929FC200013802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2226730A1F94076F008ACE82 /* Renderer.cpp in Sources */,
+				222673091F94076F008ACE82 /* main.cpp in Sources */,
+				2226730C1F94076F008ACE82 /* State_Game.cpp in Sources */,
+				2226730B1F94076F008ACE82 /* Sprite.cpp in Sources */,
+				2226730D1F94076F008ACE82 /* State_Menu.cpp in Sources */,
+				222673081F94076F008ACE82 /* App.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226E3B431F940127000E19BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222673291F9407DB008ACE82 /* Renderer.cpp in Sources */,
+				222673281F9407DB008ACE82 /* main.cpp in Sources */,
+				2226732B1F9407DB008ACE82 /* State_Game.cpp in Sources */,
+				2226732A1F9407DB008ACE82 /* Sprite.cpp in Sources */,
+				2226732C1F9407DB008ACE82 /* State_Menu.cpp in Sources */,
+				222673271F9407DB008ACE82 /* App.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		224430611F929FC200013802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		224430621F929FC200013802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		224430641F929FC200013802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../Lightwave/Engine/Includes/C++11/",
+					"../../../Lightwave/Framework/Includes/C++11/",
+					"../../Includes/C++11/",
+				);
+				INFOPLIST_FILE = "TriColor-Wars/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"../../../Lightwave/Framework/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)",
+					"../../../Lightwave/Engine/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lLWPlatform",
+					"-lLWVideo",
+					"-lLWAudio",
+					"-lLWCore",
+					"-lLWEngine",
+					"-lpng",
+					"-lfreetype",
+					"-lz",
+					"-logg",
+					"-lvorbis",
+					"-lvorbisfile",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NeonLightGames.TriColor-Wars";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		224430651F929FC200013802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"../../../Lightwave/Engine/Includes/C++11/",
+					"../../../Lightwave/Framework/Includes/C++11/",
+					"../../Includes/C++11/",
+				);
+				INFOPLIST_FILE = "TriColor-Wars/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"../../../Lightwave/Framework/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)",
+					"../../../Lightwave/Engine/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lLWPlatform",
+					"-lLWVideo",
+					"-lLWAudio",
+					"-lLWCore",
+					"-lLWEngine",
+					"-lpng",
+					"-lfreetype",
+					"-lz",
+					"-logg",
+					"-lvorbis",
+					"-lvorbisfile",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NeonLightGames.TriColor-Wars";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		226E3B5F1F940127000E19BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"../../../Lightwave/Engine/Includes/C++11/",
+					"../../../Lightwave/Framework/Includes/C++11/",
+					"../../Includes/C++11/",
+				);
+				INFOPLIST_FILE = "TriColor-Warsi/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"../../../Lightwave/Engine/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+					"../../../Lightwave/Dependency/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+					"../../../Lightwave/Framework/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+				);
+				OTHER_LDFLAGS = (
+					"-lLWPlatformi",
+					"-lLWVideoi",
+					"-lLWAudioi",
+					"-lLWCorei",
+					"-lpngi",
+					"-lfreetypei",
+					"-lz",
+					"-loggi",
+					"-lvorbisi",
+					"-lLWEnginei",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NeonLightGames.TriColor-Warsi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		226E3B601F940127000E19BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"../../../Lightwave/Engine/Includes/C++11/",
+					"../../../Lightwave/Framework/Includes/C++11/",
+					"../../Includes/C++11/",
+				);
+				INFOPLIST_FILE = "TriColor-Warsi/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"../../../Lightwave/Engine/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+					"../../../Lightwave/Dependency/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+					"../../../Lightwave/Framework/Binarys/$(CONFIGURATION)/$(CURRENT_ARCH)/",
+				);
+				OTHER_LDFLAGS = (
+					"-lLWPlatformi",
+					"-lLWVideoi",
+					"-lLWAudioi",
+					"-lLWCorei",
+					"-lpngi",
+					"-lfreetypei",
+					"-lz",
+					"-loggi",
+					"-lvorbisi",
+					"-lLWEnginei",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NeonLightGames.TriColor-Warsi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2244304D1F929FC200013802 /* Build configuration list for PBXProject "TriColor-Wars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224430611F929FC200013802 /* Debug */,
+				224430621F929FC200013802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		224430631F929FC200013802 /* Build configuration list for PBXNativeTarget "TriColor-Wars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				224430641F929FC200013802 /* Debug */,
+				224430651F929FC200013802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226E3B611F940127000E19BB /* Build configuration list for PBXNativeTarget "TriColor-Warsi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226E3B5F1F940127000E19BB /* Debug */,
+				226E3B601F940127000E19BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2244304A1F929FC200013802 /* Project object */;
+}
