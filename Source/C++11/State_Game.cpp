@@ -345,7 +345,7 @@ State &State_Game::Update(bool Tick, App *A, uint64_t lCurrentTime) {
 	Settings &Set = A->GetSettings();
 	if (Set.m_GameMode == Settings::OnePlayer) {
 		m_ScoreLbl->SetTextf("%.6d", m_PlayerOne.m_Score);
-	} else if (Set.m_GameMode = Settings::TwoPlayer) {
+	} else if (Set.m_GameMode == Settings::TwoPlayer) {
 		m_ScoreLbl->SetTextf("%.6d P1 | P2 %.6d", m_PlayerOne.m_Score, m_PlayerTwo.m_Score);
 	}
 

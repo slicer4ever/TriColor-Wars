@@ -86,12 +86,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../../Lightwave/Dependency/Includes/C++11/;../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;WIN32_WINNT=0x0602;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>../../../LightWave/Dependency/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Framework/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Engine/Binarys/$(Configuration)/$(PlatformTarget)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;GLew.lib;Freetype262.lib;libpng.lib;zlib.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;libGLEW.lib;libfreetype.lib;libpng.lib;libz.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -100,12 +100,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../../Lightwave/Dependency/Includes/C++11/;../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;WIN32_WINNT=0x0602;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>../../../LightWave/Dependency/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Framework/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Engine/Binarys/$(Configuration)/$(PlatformTarget)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;GLew.lib;Freetype262.lib;libpng.lib;zlib.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;libGLEW.lib;libfreetype.lib;libpng.lib;libz.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -116,14 +116,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../../Lightwave/Dependency/Includes/C++11/;../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;WIN32_WINNT=0x0602;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>../../../LightWave/Dependency/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Framework/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Engine/Binarys/$(Configuration)/$(PlatformTarget)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;GLew.lib;Freetype262.lib;libpng.lib;zlib.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;libGLEW.lib;libfreetype.lib;libpng.lib;libz.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -134,14 +134,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../../Lightwave/Dependency/Includes/C++11/;../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../Lightwave/Framework/Includes/C++11/;../../../Lightwave/Engine/Includes/C++11/;../../Includes/C++11/</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;WIN32_WINNT=0x0602;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>../../../LightWave/Dependency/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Framework/Binarys/$(Configuration)/$(PlatformTarget)/;../../../LightWave/Engine/Binarys/$(Configuration)/$(PlatformTarget)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;GLew.lib;Freetype262.lib;libpng.lib;zlib.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>LWCore.lib;LWPlatform.lib;LWVideo.lib;LWAudio.lib;LWNetwork.lib;LWEngine.lib;OpenGL32.lib;D3D11.lib;D3DCompiler.lib;libGLEW.lib;libfreetype.lib;libpng.lib;libz.lib;libogg.lib;libvorbis.lib;Ws2_32.lib;Iphlpapi.lib;XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
