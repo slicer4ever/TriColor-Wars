@@ -1,37 +1,55 @@
 #include <LWCore/LWAllocators/LWAllocator_Default.h>
 #include <LWCore/LWTimer.h>
 #include "App.h"
-#include <thread>
+#include <LWPlatform/LWThread.h>
+#include <LWPlatform/LWApplication.h>
 #include <chrono>
 
-void AudioThread(App *A) {
-	while (!(A->GetFlag()&App::Terminate)) {
+LWThread *AThread;
+LWThread *UThread;
+
+void AudioThread(LWThread *T) {
+
+	LWRunLoop([](void *UserData)->bool {
+		App *A = (App*)UserData;
 		A->AudioThread(LWTimer::GetCurrent());
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	}
+		return (A->GetFlag()&App::Terminate) == 0;
+	}, LWTimer::GetResolution() / 60, T->GetUserData());
+	return;
 }
 
-void UpdateThread(App *A) {
-	while (!(A->GetFlag()&App::Terminate)) {
+void UpdateThread(LWThread *T) {
+
+	LWRunLoop([](void *UserData)->bool {
+		App *A = (App*)UserData;
 		A->UpdateThread(LWTimer::GetCurrent());
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	}
+		return (A->GetFlag()&App::Terminate) == 0;
+	}, LWTimer::GetResolution() / 60, T->GetUserData());
+	return;
 }
 
 int LWMain(int argc, char **argv) {
-	LWAllocator_Default Allocator;
-	App *A = Allocator.Allocate<App>(Allocator);
-	std::thread UThread(UpdateThread, A);
-	std::thread AThread(AudioThread, A);
-	while (!(A->GetFlag()&App::Terminate)) {
+	LWAllocator_Default *Allocator = new LWAllocator_Default();
+	App *A = Allocator->Allocate<App>(*Allocator);
+	AThread = Allocator->Allocate<LWThread>(AudioThread, A);
+	UThread = Allocator->Allocate<LWThread>(UpdateThread, A);
+	LWRunLoop([](void *UserData) ->bool{
+		App *A = (App*)UserData;
 		uint64_t Current = LWTimer::GetCurrent();
 		A->InputThread(Current);
 		A->RenderThread(Current);
-		std::this_thread::sleep_for(std::chrono::microseconds(1));
-	}
-	UThread.join();
-	AThread.join();
 
-	LWAllocator::Destroy(A);
+		bool Running = (A->GetFlag()&App::Terminate) == 0;
+		if (Running) return Running;
+
+		LWAllocator_Default *DefAlloc = (LWAllocator_Default*)&A->GetAllocator();
+		AThread->Join();
+		UThread->Join();
+		LWAllocator::Destroy(AThread);
+		LWAllocator::Destroy(UThread);
+		LWAllocator::Destroy(A);
+		delete DefAlloc;
+		return Running;
+	}, LWTimer::GetResolution()/60, A);
 	return 0;
 }

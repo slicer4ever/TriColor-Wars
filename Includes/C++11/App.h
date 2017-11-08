@@ -65,6 +65,8 @@ public:
 
 	uint32_t GetFlag(void);
 
+	LWAllocator &GetAllocator(void);
+
 	Settings &GetSettings(void);
 
 	App(LWAllocator &Allocator);

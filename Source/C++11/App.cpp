@@ -166,6 +166,10 @@ App &App::DispatchAudio(const char *Name, float Volume, uint32_t LoopCnt) {
 	return *this;
 }
 
+LWAllocator &App::GetAllocator(void) {
+	return m_Allocator;
+}
+
 uint32_t App::GetFlag(void) {
 	return m_Flag;
 }
