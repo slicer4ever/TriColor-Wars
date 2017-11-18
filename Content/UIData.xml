@@ -5,7 +5,7 @@
 	<Shader Name="UIColorShader" Path="UIColor" />
 	<Shader Name="SimpleShader" Path="App:SimpleShader.lws" />
 	<Texture Name="Atlas" Path="App:Atlas.png" State="MagNearest|MinNearest" />
-	<AudioStream Name="BackgroundAudio" Path="App:Background.ogg" Flag="Decompressed" />
+	<AudioStream Name="BackgroundAudio" Path="App:Background.ogg"/>
 	<AudioStream Name="Fire" Path="App:Fire.ogg" />
 	<AudioStream Name="Pop" Path="App:Pop.ogg" />
 </AssetManager>

@@ -17,7 +17,9 @@
 void App::AudioThread(uint64_t lCurrentTime) {
 	while (m_AudioQueue.m_ReadPos != m_AudioQueue.m_WritePos) {
 		uint32_t i = m_AudioQueue.m_ReadPos%AudioQueue::MaxQueueSize;
-		m_AudioDriver->CreateSound(m_AudioQueue.m_Stream[i], LWSound::RequestPlay, nullptr, m_AudioQueue.m_LoopCount[i], m_AudioQueue.m_StreamVolume[i]);
+		if (!m_AudioDriver->CreateSound(m_AudioQueue.m_Stream[i], LWSound::RequestPlay, nullptr, m_AudioQueue.m_LoopCount[i], m_AudioQueue.m_StreamVolume[i])) {
+			std::cout << "Error making audio!" << std::endl;
+		}
 		m_AudioQueue.m_ReadPos++;
 	}
 
